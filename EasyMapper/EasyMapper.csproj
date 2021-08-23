@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>Ruhex.Util.EasyMapper</PackageId>
+    <Authors>Mikhail Movchan</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/ruhex/EasyMapper</RepositoryUrl>
+    <Description>Easy object to object mapper.</Description>
+    <PackageTags>AutoMapper, AutoMap, Mapper, EasyMapper, EasyMap,</PackageTags>
+  </PropertyGroup>
+
+</Project>
