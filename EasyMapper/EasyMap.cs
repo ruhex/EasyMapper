@@ -12,5 +12,6 @@
             return target;
         }
         public static TTarget Map<TTarget>(object source) where TTarget : new() => Map(new TTarget(), source);
+        public static TTarget To<TTarget>(this object source) where TTarget : new() => Map(new TTarget(), source);
     } 
 }
