@@ -1,14 +1,17 @@
-﻿namespace EasyMapper
+﻿using System.Linq;
+
+namespace EasyMapper
 {
     public static class EasyMap
     {
         public static TTarget Map<TTarget>(TTarget target, object source)
         {
-            foreach (var pro1 in target.GetType().GetProperties())
-                foreach (var pro2 in source.GetType().GetProperties())
-                    if (pro1.Name == pro2.Name)
-                        if (pro1.PropertyType == pro2.PropertyType)
-                            pro1.SetValue(target, pro2.GetValue(source));
+            foreach (var prop1 in target.GetType().GetProperties())
+            {
+                var prop2 = source.GetType().GetProperties().FirstOrDefault(x => x.Name == prop1.Name && x.PropertyType == prop1.PropertyType);
+                if (!(prop2 is null))
+                    prop1.SetValue(target, prop2.GetValue(source));
+            }
             return target;
         }
         public static TTarget Map<TTarget>(object source) where TTarget : new() => Map(new TTarget(), source);
